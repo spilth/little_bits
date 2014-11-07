@@ -46,6 +46,15 @@ You can then start up `irb` or create a script with the following code:
     
     # Set output to 100% for 3 seconds (3000 milliseconds)
     cloud_bit.output(100, 3000)
+    
+    # Set output to 50% indefinitely (-1 for duration)
+    cloud_Bit.output(50, -1)
+
+#### Method Arguments
+
+The first argument is the percentage which should be between `0` and `100`.
+
+The second argument is the duration which should be between `0` and `32000`. You can send `-1` if you want the duration to be indefinite.
 
 ### Arduino Module
 
@@ -76,6 +85,12 @@ You can then start up `irb` or create a Ruby script with the following code:
     
     # Set d9 to min output
     arduino_module.d9(0)
+
+#### Method Arguments
+    
+The `d1` method can be sent `true` or `false`.
+
+The `d5` and `d9` methods can be sent `true`, `false`, or a number between `0` and `255`.
 
 ## Contributing
 
