@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/spilth/little_bits.svg?branch=master)](https://travis-ci.org/spilth/little_bits)
 
-# LittleBits
+# LittleBits Ruby Gem
 
 A Ruby Gem for communicating with [littleBits](http://littlebits.cc) modules.
 
