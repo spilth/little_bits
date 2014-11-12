@@ -6,6 +6,18 @@ module LittleBits
 
     before(:each) do
       allow(ArduinoFirmata).to receive(:connect) { arduino_firmata }
+      allow(Kernel).to receive(:at_exit) do |&block|
+        block.call
+      end
+      allow(arduino_firmata).to receive(:close)
+    end
+
+    describe 'deconstruction' do
+      it 'closes arduino connection on exit' do
+        LittleBits::ArduinoModule.new('serial_port')
+
+        expect(arduino_firmata).to have_received(:close)
+      end
     end
 
     describe 'd1' do

@@ -4,6 +4,8 @@ module LittleBits
   class ArduinoModule
     def initialize(serial_port)
       @arduino = ArduinoFirmata.connect(serial_port)
+
+      Kernel.at_exit { @arduino.close }
     end
 
     def d1(value)
